@@ -1,0 +1,31 @@
+.authContent {
+  border: 3px solid var(--border-color);
+  border-radius: var(--radius);
+  max-width: 600px;
+  padding: 55px 40px;
+  margin: 90px auto;
+  min-height: 690px;
+}
+
+.title {
+  margin-bottom: 28px;
+}
+
+.titleInner {
+  color: var(--main-color);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  font-size: 1.55rem;
+}
+
+.account {
+  margin-top: var(--space-lg);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.account a {
+  color: var(--main-color);
+}

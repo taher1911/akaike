@@ -1,0 +1,24 @@
+.sidebar {
+  width: var(--sidebar-width);
+  border-right: 1px solid var(--sidebar-border-color);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 0.3s;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.toggleSidebar {
+  margin: 14px 0 12px 0;
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  font-size: 30px;
+  color: #555;
+}

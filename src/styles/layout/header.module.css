@@ -1,0 +1,16 @@
+.header {
+  height: var(--header-height);
+  background-color: var(--bg-dark-color);
+  box-shadow: 0 8px 10px rgba(0 0 0 / 0.2);
+  padding: 0 50px;
+}
+
+.logo {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--bs-white);
+}
+
+.logo:hover {
+  color: var(--bs-white);
+}
