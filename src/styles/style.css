@@ -4,7 +4,7 @@
   --font-size-sm: 14px;
   --font-size-md: 18px;
   --space-sm: 10px;
-  --space-md: 20px;
+  --space-md: 17px;
   --space-lg: 40px;
 
   --main-color: rgb(83, 83, 83);
@@ -16,10 +16,10 @@
   --sidebar-border-color: #999;
   --link-bg-color: #f3f3f3;
 
-  --header-height: 70px;
-  --sidebar-width: 350px;
+  --header-height: 55px;
+  --sidebar-width: 300px;
   --radius: 10px;
-  --inp-height: 65px;
+  --inp-height: 48px;
 }
 
 body {
