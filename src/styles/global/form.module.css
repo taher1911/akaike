@@ -185,3 +185,36 @@
 .checkboxInput:checked ~ .checkBoxOuter .checkBoxInner {
   background-color: var(--bg-el-color);
 }
+
+/* select  */
+
+.selectBox {
+  /* background: ; */
+  /* box-shadow: 0px 10px 24px 0px #00000014; */
+  border-radius: 5px;
+  min-width: 100px;
+  height: 35px;
+  color: var(--text-color);
+  border: 1px solid var(--new-dark-color);
+}
+
+.select {
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+}
+
+.select option {
+  text-transform: capitalize;
+}
+
+.selectIcon {
+  line-height: 0;
+  padding: 0 var(--space-sm);
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
