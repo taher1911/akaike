@@ -1,4 +1,5 @@
 export const modal_add_dataset = "modal_add_dataset";
+export const modal_tagging = "modal_tagging";
 
 export const dateHandler = (date) => {
   const d = new Date(date);
@@ -184,4 +185,14 @@ export const datasets = [
       classes: 3,
     },
   },
+];
+
+export const creationSteps = [
+  "upload/choose data",
+  "data cleaning",
+  "tagging/labelling",
+  "split data",
+  "data processing",
+  "data augmentation",
+  "finalize & export data",
 ];
