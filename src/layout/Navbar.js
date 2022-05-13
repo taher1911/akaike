@@ -17,8 +17,8 @@ const links = [
     link: "models",
     icon: <ion-icon name="analytics-outline"></ion-icon>,
     subLinks: [
-      { label: "my models", url: "/data99" },
-      { label: "public models", url: "/data3" },
+      { label: "my models", url: "/models" },
+      { label: "public models", url: "/public-models" },
     ],
   },
   {

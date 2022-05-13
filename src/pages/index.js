@@ -12,6 +12,14 @@ import PublicDatasets from "./PublicDatasets";
 
 import CreateDatabase from "./CreateDatabase";
 
+import Models from "./Models";
+
+import ModelDetails from "./ModelDetails";
+
+import PublicModels from "./PublickModels";
+
+import CreateModel from "./CreateModel";
+
 export {
   Home,
   Login,
@@ -20,4 +28,8 @@ export {
   Datasets,
   PublicDatasets,
   CreateDatabase,
+  Models,
+  ModelDetails,
+  PublicModels,
+  CreateModel,
 };

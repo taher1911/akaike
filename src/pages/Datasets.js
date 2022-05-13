@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { Store, action_toggle_modal } from "../store";
 
-import { Head, DatasetItem, Modal } from "../components/global";
+import { Head, Card, Modal } from "../components/global";
 
 import { datasets, modal_add_dataset } from "../constants";
 
@@ -24,7 +24,7 @@ export default function Datasets() {
       <div className="row g-5 ">
         {datasets.map((item) => (
           <div key={item.id} className="col-4">
-            <DatasetItem data={item} />
+            <Card data={item} route="datasets" />
           </div>
         ))}
       </div>
