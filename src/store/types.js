@@ -15,3 +15,13 @@ export const LOAD_FILES = "LOAD_FILES";
 export const LOAD_MORE_FILES = "LOAD_MORE_FILES";
 
 export const REMOVE_FILE = "REMOVE_FILE";
+
+export const HANDLE_TAGS = "HANDLE_TAGS";
+
+export const DONE_TAGS = "DONE_TAGS";
+
+export const EDIT_TAGS = "EDIT_TAGS";
+
+export const FINISH_DATASET = "FINISH_DATASET";
+
+export const RESET_DATASET = "RESET_DATASET";

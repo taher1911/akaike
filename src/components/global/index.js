@@ -8,7 +8,7 @@ import { Alert, AlertToast, AlertConfirmation } from "./Alert";
 
 import Head from "./Head";
 
-import Card from "./Card";
+import DatasetItem from "./DatasetItem";
 
 import Modal from "./Modal";
 
@@ -22,7 +22,7 @@ export {
   AlertConfirmation,
   CheckField,
   Head,
-  Card,
+  DatasetItem,
   Modal,
   SelectField,
 };

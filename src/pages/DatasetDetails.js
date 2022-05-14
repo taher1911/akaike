@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import { useParams, Link } from "react-router-dom";
 
-import { datasets } from "../constants";
+import { Store } from "../store";
 
 import { Head } from "../components/global";
 
@@ -11,15 +11,19 @@ import styles from "../styles/dataset/index.module.css";
 export default function DatasetDetails() {
   const { id } = useParams();
 
+  const { dataStore } = useContext(Store);
+
   // fetch single item
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-    const filter = datasets.filter(
-      (item) => parseInt(item.id) === parseInt(id)
-    );
-    setItem(...filter);
-  }, [id]);
+    if (dataStore.files) {
+      const filter = dataStore.datasets.filter(
+        (item) => parseInt(item.id) === parseInt(id)
+      );
+      setItem(...filter);
+    }
+  }, [id, dataStore.files]);
 
   // loading
   if (!item) {
@@ -27,7 +31,7 @@ export default function DatasetDetails() {
   }
   return (
     <section className="p-l p-r p-b p-t">
-      <Head title={item.title} />
+      <Head title={item.name} />
 
       {/* items  */}
       <div className="row g-5 ">
@@ -38,7 +42,7 @@ export default function DatasetDetails() {
               dataset name:
             </h5>
             <h6 className={`m-0 text-capitalize ${styles.detailsresponse}`}>
-              {item.title}
+              {item.name}
             </h6>
           </div>
 
@@ -48,11 +52,12 @@ export default function DatasetDetails() {
               dataset tags:
             </h5>
             <h6 className={`m-0 text-capitalize ${styles.detailsresponse}`}>
-              {item.tags.map((tag, index) => (
-                <span key={index} style={{ textDecoration: "underline" }}>
-                  {tag} {item.tags.length - 1 === index ? "" : ", "}
-                </span>
-              ))}
+              {item.tags &&
+                item.tags.map((tag, index) => (
+                  <span key={index} style={{ textDecoration: "underline" }}>
+                    {tag} {item.tags.length - 1 === index ? "" : ", "}
+                  </span>
+                ))}
             </h6>
           </div>
 
@@ -81,6 +86,13 @@ export default function DatasetDetails() {
         </div>
         <div className="col-6">
           <div className={`${styles.datasetImgDetails} position-relative`}>
+            {item.files && (
+              <img
+                src={window.URL.createObjectURL(item.files[0].file)}
+                alt={item.name}
+                className="img-fluid w-100 h-100"
+              />
+            )}
             <h5 className={`${styles.datasetImgTitle} text-capitalize`}>
               dataset display image
             </h5>

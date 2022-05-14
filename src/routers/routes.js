@@ -6,10 +6,6 @@ import {
   Datasets,
   DatasetDetails,
   CreateDatabase,
-  Models,
-  ModelDetails,
-  PublicModels,
-  CreateModel,
 } from "../pages";
 
 export const routes = [
@@ -33,25 +29,6 @@ export const routes = [
     id: 7,
     path: "/create-database",
     Component: CreateDatabase,
-    isProtected: true,
-  },
-  { id: 8, path: "/models", Component: Models, isProtected: true },
-  {
-    id: 9,
-    path: "/models/:id",
-    Component: ModelDetails,
-    isProtected: true,
-  },
-  {
-    id: 10,
-    path: "/public-models",
-    Component: PublicModels,
-    isProtected: true,
-  },
-  {
-    id: 11,
-    path: "/create-model",
-    Component: CreateModel,
     isProtected: true,
   },
 ];
