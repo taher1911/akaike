@@ -17,7 +17,14 @@ export default function DatasetItem({ data }) {
             className="img-fluid w-100 h-100"
           />
         )}
-        <div className="dropdown">
+        <div
+          className="dropdown"
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+          }}
+        >
           <button
             type="button"
             className={`dropdown-toggle p-0 m-0 border-0 ${styles.datasetList}`}
