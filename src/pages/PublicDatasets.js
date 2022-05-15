@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Head, DatasetItem } from "../components/global";
+import { Head, Card } from "../components/global";
 
-import { datasets } from "../constants";
+import { publicDatasets } from "../constants";
 
 export default function PublicDatasets() {
   return (
@@ -11,9 +11,9 @@ export default function PublicDatasets() {
 
       {/* items  */}
       <div className="row g-5 ">
-        {datasets.slice(0, 3).map((item) => (
+        {publicDatasets.map((item) => (
           <div key={item.id} className="col-4">
-            <DatasetItem data={item} />
+            <Card data={item} route="datasets" />
           </div>
         ))}
       </div>

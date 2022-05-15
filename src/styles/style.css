@@ -92,7 +92,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .our-btn:hover {
