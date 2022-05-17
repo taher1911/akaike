@@ -553,7 +553,5 @@ export const creationSteps = [
   "data cleaning",
   "tagging/labelling",
   "split data",
-  "data processing",
-  "data augmentation",
-  "finalize & export data",
+  "finalize",
 ];
