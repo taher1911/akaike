@@ -28,7 +28,7 @@ export default function TestingModel() {
 
   return (
     <section className="p-l p-r p-b p-t">
-      <Link to={`/model/${id}`} className={`${styles.backBtn} text-capitalize`}>
+      <Link to={`/models/${id}`} className={`${styles.backBtn} text-capitalize`}>
         <ChevronLeft />
         <span>back</span>
       </Link>
