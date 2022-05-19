@@ -6,9 +6,9 @@ import {
   REMOVE_FILE,
   HANDLE_TAGS,
   DONE_TAGS,
-  EDIT_TAGS,
   FINISH_DATASET,
   RESET_DATASET,
+  SPLIT_DATA,
 } from "../types";
 
 export default function dataReducer(state, action) {
@@ -88,6 +88,14 @@ export default function dataReducer(state, action) {
         annotated: [...filterItemsHasTags, ...state.annotated],
       };
     }
+    case SPLIT_DATA: {
+      return {
+        ...state,
+        splitData: {
+          ...action.payload,
+        },
+      };
+    }
     case FINISH_DATASET: {
       const data = action.payload;
       return {
@@ -95,7 +103,6 @@ export default function dataReducer(state, action) {
         datasets: [data, ...state.datasets],
       };
     }
-
     case RESET_DATASET: {
       return {
         ...state,
@@ -104,6 +111,10 @@ export default function dataReducer(state, action) {
         annotated: [],
         name: "",
         tag: "",
+        splitData: {
+          min: null,
+          max: null,
+        },
       };
     }
     default: {

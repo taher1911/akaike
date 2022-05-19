@@ -12,6 +12,9 @@ import {
   DONE_TAGS,
   FINISH_DATASET,
   RESET_DATASET,
+  SPLIT_DATA,
+  CREATE_MODEL,
+  LOAD_MODELS_Files,
 } from "./types";
 
 export function action_login(data) {
@@ -98,5 +101,27 @@ export function action_finish_dataset(data) {
 export function action_reset_dataset() {
   return {
     type: RESET_DATASET,
+  };
+}
+
+export function action_split_data(data) {
+  return {
+    type: SPLIT_DATA,
+    payload: data,
+  };
+}
+
+// model
+export function action_create_model(data) {
+  return {
+    type: CREATE_MODEL,
+    payload: data,
+  };
+}
+
+export function action_model_load_files(files) {
+  return {
+    type: LOAD_MODELS_Files,
+    payload: files,
   };
 }

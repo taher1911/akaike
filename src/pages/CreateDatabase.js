@@ -35,8 +35,6 @@ export default function CreateDatabase() {
         <DataCleaning name={name} />
         <div></div>
         <SplitData name={name} />
-        <div></div>
-        <div></div>
         <Finalize name={name} />
       </CreateDatabaseStepsWrapper>
 

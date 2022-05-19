@@ -1,4 +1,4 @@
-import { datasets } from "../constants";
+import { datasets, models } from "../constants";
 
 export const authState = () => {
   const getToken = JSON.parse(localStorage.getItem("token"));
@@ -33,4 +33,13 @@ export const dataState = {
   files: [],
   annotated: [],
   datasets: datasets,
+  splitData: {
+    training: null,
+    test: null,
+    validation: null,
+  },
+};
+
+export const modelState = {
+  models: models,
 };
