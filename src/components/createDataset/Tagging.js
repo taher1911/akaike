@@ -25,11 +25,10 @@ export default function Tagging() {
 
   const [activeImage, setActiveImage] = useState(findFile);
 
-  console.log(findFile);
   const [taggingImage, setTaggingImage] = useState(dataStore.files);
 
   const [poppedTags, setPoppedTags] = useState([]);
-  console.log(activeImage.tags);
+
   const [addTag, setAddTag] = useState(true);
 
   const [loading, setLoading] = useState(false);
@@ -110,14 +109,14 @@ export default function Tagging() {
       setPoppedTags([...tags]);
 
       let NewTags = activeImage.tags;
-      let poppedNewTags = NewTags.push(shifted);
+      NewTags.push(shifted);
       setActiveImage({
         ...activeImage,
         tags: NewTags,
       });
     }
   };
-  console.log(poppedTags);
+
   return (
     <div className={`${styles.tagging}`}>
       <div className="row flex-nowrap g-0">
