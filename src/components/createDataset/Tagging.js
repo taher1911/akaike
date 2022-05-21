@@ -27,23 +27,21 @@ export default function Tagging() {
 
   const [taggingImage, setTaggingImage] = useState(dataStore.files);
 
-  const [poppedTags, setPoppedTags] = useState([]);
-
   const [addTag, setAddTag] = useState(true);
 
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (activeImage.tags) {
-      const filterTag = dataStore.files.filter((item) => item.tags);
-      setTaggingImage(filterTag);
-      setAddTag(false);
-    } else {
-      const filterTag = dataStore.files.filter((item) => !item.tags);
-      setTaggingImage(filterTag);
-      setAddTag(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (activeImage.tags) {
+  //     const filterTag = dataStore.files.filter((item) => item.tags);
+  //     setTaggingImage(filterTag);
+  //     setAddTag(false);
+  //   } else {
+  //     const filterTag = dataStore.files.filter((item) => !item.tags);
+  //     setTaggingImage(filterTag);
+  //     setAddTag(true);
+  //   }
+  // }, []);
 
   const nextImage = () => {
     const findActiveImage = taggingImage.findIndex(
@@ -89,34 +87,6 @@ export default function Tagging() {
     dataDispatch(action_handle_tags({ tags, id: activeImage.id }));
   };
 
-  const undoHandler = () => {
-    if (activeImage.tags.length > 0) {
-      let tags = activeImage.tags;
-      let popped = tags.pop();
-      setPoppedTags([...poppedTags, popped]);
-
-      setActiveImage({
-        ...activeImage,
-        tags: tags,
-      });
-    }
-  };
-
-  const redoHandler = () => {
-    if (poppedTags.length >= 1) {
-      let tags = poppedTags;
-      let shifted = tags.pop();
-      setPoppedTags([...tags]);
-
-      let NewTags = activeImage.tags;
-      NewTags.push(shifted);
-      setActiveImage({
-        ...activeImage,
-        tags: NewTags,
-      });
-    }
-  };
-
   return (
     <div className={`${styles.tagging}`}>
       <div className="row flex-nowrap g-0">
@@ -137,21 +107,13 @@ export default function Tagging() {
             <div
               className={`${styles.taggingBtns} d-flex align-items-center justify-content-center g-2`}
             >
-              <button
-                type="button"
-                className={styles.doBtn}
-                onClick={undoHandler}
-              >
+              <button type="button" className={styles.doBtn}>
                 undo
                 <span>
                   <UndoOutlined />
                 </span>
               </button>
-              <button
-                type="button"
-                className={styles.doBtn}
-                onClick={redoHandler}
-              >
+              <button type="button" className={styles.doBtn}>
                 redo
                 <span>
                   <RedoOutlined />
