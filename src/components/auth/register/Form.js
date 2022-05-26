@@ -41,9 +41,9 @@ export default function RegisterForm() {
   const submitForm = (values, action) => {
     setLoading(true);
     const data = {
-      UserName: values.firstName,
+      userName: values.firstName,
       userEmail: values.email,
-      UserPassword: values.password,
+      userPassword: values.password,
     };
     server_register(data)
       .then((response) => {
