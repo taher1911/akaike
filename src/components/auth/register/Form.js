@@ -47,6 +47,7 @@ export default function RegisterForm() {
     };
     server_register(data)
       .then((response) => {
+console.log(response);
         // authDispatch(
         //   action_login({
         //     token: response.data.data.auth_key,
