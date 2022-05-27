@@ -41,23 +41,26 @@ export default function RegisterForm() {
   const submitForm = (values, action) => {
     setLoading(true);
     const data = {
-      userName: values.firstName,
-      userEmail: values.email,
-      userPassword: values.password,
+      UserName: values.firstName,
+      UserEmail: values.email,
+      UserPassword: values.password,
     };
     server_register(data)
       .then((response) => {
-console.log(response);
-        // authDispatch(
-        //   action_login({
-        //     token: response.data.data.auth_key,
-        //     user: { name: "Rahul" },
-        //   })
-        // );
+        authDispatch(
+          action_login({
+            token: response.data.data.auth_key,
+            user: response.data.data,
+          })
+        );
+      })
+      .then(() => {
+        navigate("/");
       })
       .catch((err) => {
         setLoading(false);
         action.setSubmitting(false);
+        AlertToast("error", "please try again later");
       });
   };
 

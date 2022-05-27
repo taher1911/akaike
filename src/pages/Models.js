@@ -1,24 +1,27 @@
 import React, { useContext } from "react";
 
-import { Store, action_toggle_modal } from "../store";
+import { useNavigate } from "react-router-dom";
 
-import { Head, Card, Modal } from "../components/global";
+import { Store } from "../store";
 
-import { modal_create_model } from "../constants";
+import { Head, Card } from "../components/global";
 
-import { CreateModel } from "../components/crud";
+import { useFetcher } from "../hooks";
+
+import { server_get_models } from "../server/models";
 
 export default function Models() {
-  const { globalDispatch, globalStore, modelStore } = useContext(Store);
+  const navigate = useNavigate();
+  const { modelStore } = useContext(Store);
+
+  const { fetchItems } = useFetcher({ callback: server_get_models });
 
   return (
     <section className="p-l p-r p-b p-t">
       <Head
         title="my models"
         btn="create new model"
-        callback={() =>
-          globalDispatch(action_toggle_modal({ comp: modal_create_model }))
-        }
+        callback={() => navigate("/model-create")}
       />
 
       {/* items  */}
@@ -30,12 +33,6 @@ export default function Models() {
             </div>
           ))}
       </div>
-
-      {globalStore.modalStatus.isActive && (
-        <Modal col="col-12" title="create a new model" titleLeft>
-          <CreateModel />
-        </Modal>
-      )}
     </section>
   );
 }
