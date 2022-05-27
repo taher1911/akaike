@@ -18,6 +18,7 @@ export default function Datasets() {
 
   const { fetchItems } = useFetcher({ callback: server_get_dataset });
 
+  console.log(fetchItems);
   useEffect(() => {
     dataDispatch(action_reset_dataset());
   }, [dataDispatch]);

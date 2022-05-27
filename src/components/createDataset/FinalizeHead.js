@@ -32,17 +32,18 @@ export default function FinalizeHead() {
       dataStore.annotated.map((item) => (count += item.tags.length));
       return count;
     };
+
+    // Owner: authStore.user.user_id,
+    // DatasetName: dataStore.name || state?.name,
+    // DatasetTag: dataStore.tag.join(","),
+    // DataSplit: `${dataStore.splitData.training}:${dataStore.splitData.validation}:${dataStore.splitData.test}`,
+    // TotalImages: dataStore.files.length,
+    // TotalClasses: totalClasses(),
+    // IsDeleted: false,
+    // DataConfig: null,
     const data = {
-      // Owner: authStore.user.user_id,
-      // DatasetName: dataStore.name || state?.name,
-      // DatasetTag: dataStore.tag.join(","),
-      // DataSplit: `${dataStore.splitData.training}:${dataStore.splitData.validation}:${dataStore.splitData.test}`,
-      // TotalImages: dataStore.files.length,
-      // TotalClasses: totalClasses(),
-      // IsDeleted: false,
-      // DataConfig: null,
       Owner: 12,
-      DatasetName: "Test",
+      DatasetName: "Test2",
       DatasetTag: "Classification",
       DataSplit: "12:12:34",
       IsDeleted: false,
